@@ -1,6 +1,61 @@
 body{
 	background: url("../images/background.jpg");
 	background-size: 100%;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    
     color: black;
 }
+   .section {
+    background-color: #999999;
+    margin-bottom: 5px;
+    background: url("../images/background.jpg");
+    
+
+   }
+
+* {
+	box-sizing: border-box;
+}
+img { 
+    height: auto;
+    max-width: 100%;
+}
+.btn {
+    /* adding spacing between each button*/
+    margin: 3px 3px;
+    background-color: #999999;
+    border-color: #fff;
+    background: url("../images/background.jpg");
+}
+
+.search-item {
+    /* making the images go in one line rather than block & adding spacing between the images*/
+    float: left;
+    margin: 5px;
+}
+
+.jumbotron {
+
+    background: url("../images/background.jpg");
+    color: rgb(153, 4, 4);
+
+}
+h1 {
+    text-align: center;
+}
+#gif-form {
+    text-align: center;
+}
+#copyright{
+	font-size: 14px;
+}
+div#footer {
+	clear: both;
+	margin-top: 40px;
+	position: center;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+}
+
+
