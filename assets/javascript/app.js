@@ -15,7 +15,8 @@ $(function() {
     console.log(Topics);
 })
 
-var Topics = ["Dogs","Cats", "Birds"];
+var Topics = ["Dancing","Eating", "Sleeping", "Weeping","Runnig","Walking","Flying", "Fighting",
+             "Looking","Studing","Crossing","Jumping","Juggling","Streching"];
 
 function populateButtons(Topics,classToAdd,areaToAddTo) {
     $(areaToAddTo).empty();

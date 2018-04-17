@@ -7,7 +7,7 @@ body{
 }
    .section {
     background-color: #999999;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     background: url("../images/background.jpg");
     
 
@@ -23,9 +23,11 @@ img {
 .btn {
     /* adding spacing between each button*/
     margin: 3px 3px;
-    background-color: #999999;
-    border-color: #fff;
+    
     background: url("../images/background.jpg");
+}
+#buttonsArea {
+    margin: 10px;
 }
 
 .search-item {
