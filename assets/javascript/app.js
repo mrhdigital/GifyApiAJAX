@@ -9,6 +9,7 @@
 
 // FUNCTION
 //*****************************************************************************************/
+// This function will run upon the page loading and populate the gif buttons
 $(function() {
     populateButtons(Topics,"searchButton btn btn-primary", "#buttonsArea");
     //console.log("page loaded");
@@ -16,9 +17,11 @@ $(function() {
 })
 
 var Topics = ["Dancing","Eating", "Sleeping", "Weeping","Runnig","Walking","Flying", "Fighting",
-             "Looking","Studing","Crossing","Jumping","Juggling","Streching"];
+             "Looking","Studying","Crossing","Jumping","Juggling","Streching"];
 
 function populateButtons(Topics,classToAdd,areaToAddTo) {
+    // need to empty the buttonsArea
+    //prevent adding the copies of button each time gif button is added or removed
     $(areaToAddTo).empty();
     for (var i = 0; i< Topics.length; i++) {
         var a = $('<button>');
@@ -29,13 +32,14 @@ function populateButtons(Topics,classToAdd,areaToAddTo) {
 
     }
 }
-
+//Adding click event listener to populate correct gif images
 $(document).on("click", ".searchButton",function() {
     $("#searches").empty();
     var type = $(this).data("type");
    // console.log(type);
    var queryURL = "https://api.giphy.com/v1/gifs/search?q="+type+"&api_key=dc6zaTOxFJmzC&limit=10"
    //console.log(queryURL); 
+   //performing an AJAX request with queryURL
    $.ajax({url:queryURL,method:"GET"})
    .done(function(response) {
        //console.log(response);
@@ -65,7 +69,11 @@ $(document).on("click", ".searchButton",function() {
 
 $(document).on("click",".searchImage",function(){
     var $img = $(this);
+    // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
     var state = $img.attr("data-state");
+    // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+      // Then, set the image's data-state to animate
+      // Else set src to the data-still value
     if(state == "still") {
         $img.attr("src",$img.data("animated"));
         $img.attr("data-state","animated");
@@ -75,7 +83,7 @@ $(document).on("click",".searchImage",function(){
         $img.attr("data-state","still");
     }
 })
-
+//Adding click event listner to add new gif button
 $('#addGif').on('click',function() {
    
     var newSearch = $('input').eq(0).val();
@@ -90,6 +98,7 @@ $('#addGif').on('click',function() {
     return false;
 })
 
+// Adding click event listener to remove last gif added
 $('#removeGif').on('click',function() {
    
     var newSearch = $('input').eq(0).val();
